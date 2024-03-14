@@ -1,30 +1,36 @@
-# [JSL02] Submission: Debug the DOM
+# Fitness Tracker App - Goal Management Feature
 
-You will: 
-1. Use the Starter Code Repo, 
-2. Code your solution,
-3. Commit changes to your repo
-3. Submit GitHub Repo Link to LMS [JSL02] Submission Project Tab
+Welcome to the Fitness Tracker App Goal Management feature! This part of the application allows users to set and manage their fitness goals.
 
-# Debugging Duplicate Goals
+## Overview
 
-**Debugging Brief:**
-In the current code, users can add the same fitness goal multiple times, leading to duplicate entries in the goal list. To enhance the user experience and prevent duplicates, you need to implement a check to ensure that the same goal cannot be added more than once. If a duplicate goal is detected, it should NOT be added to the list.
+In the Fitness Tracker App, users can add new goals to their goal list. Before adding a new goal, the application checks for duplicates to ensure each goal is unique.
 
-![alt text](JSL02_Solution.png)
+## How It Works
 
-**Issue:** Users can add duplicate fitness goals.
-**Debugging Task:** Prevent users from adding the same goal more than once.
+1. **Retrieve Existing Goals**:
+   - The application retrieves all existing goals from the goal list.
 
-- The goal is to prevent users from adding duplicate fitness goals to the list.
-- You need to check if the goal being added already exists in the list before appending it.
-- Display an alert to inform the user if they are trying to add a duplicate goal.
-- Focus on the code structure within the function and how to handle duplicates.
+2. **Check for Duplicates**:
+   - It iterates through each existing goal to check if it matches the new goal input provided by the user.
+   - If a duplicate goal is found, the application displays an alert informing the user that the goal already exists and prevents the addition of a duplicate goal.
 
-**Explanation:**
-1. We first retrieve all the existing goals in the `goalList` using `querySelectorAll`.
-2. Then, we iterate through each existing goal and compare its text content with the new goal input.
-3. If a duplicate is found, we display an alert message and exit the function using `return` to prevent the duplicate goal from being added.
-4. If no duplicate is found, we proceed to create and add the new goal as before.
+3. **Add New Goal**:
+   - If no duplicate is found, the application proceeds to add the new goal to the goal list.
+   - It creates a new list item (`<li>`) for the new goal and appends it to the goal list.
 
-Check out the practice challenges on Scrimba here: https://scrimba.com/playlist/pwVxGLDUW
+## Usage
+
+To use the Goal Management feature:
+
+1. Enter your new goal in the input field.
+2. Click the "Add Goal" button to add the goal to your goal list.
+3. If the goal is unique, it will be added to the list. Otherwise, an alert will notify you that the goal already exists.
+
+## Installation
+
+To integrate the Goal Management feature into your Fitness Tracker App:
+
+1. Ensure you have the necessary HTML structure with elements such as `goalList`, an input field for entering goals, and a button for adding goals.
+2. Copy the provided JavaScript code snippet into your application's JavaScript file.
+3. Ensure that the code snippet is executed when appropriate, such as when the "Add Goal" button is clicked.
